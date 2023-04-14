@@ -1,0 +1,20 @@
+name: Mirror Github to Gitee
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hub Mirror Action.
+        uses: Yikun/hub-mirror-action@v1.2
+        with:
+          src: github/xuesong-archive
+          dst: gitee/xuesong_test
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "gitee_test"
+          account_type: org
