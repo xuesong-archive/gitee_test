@@ -18,3 +18,4 @@ jobs:
           dst_token: ${{ secrets.GITEE_TOKEN }}
           static_list: "gitee_test"
           account_type: org
+          debug: true
